@@ -15,37 +15,35 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: 50,
+                padding: EdgeInsets.symmetric(vertical: 10),
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(color: Colors.white, width: 2),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Home',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                child: Center(
+                  child: Text(
+                    'Home',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
-                  ],
+                  ),
                 ),
               ),
 
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                spacing: 12,
                 children: [
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => PostsScreen()),
+                          context,
+                          MaterialPageRoute<void>(
+                            builder: (context) => const PostsScreen(),
+                          ),
                       );
                     },
                     child: Card(
@@ -59,7 +57,6 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -67,7 +64,6 @@ class HomeScreen extends StatelessWidget {
                         MaterialPageRoute(builder: (_) => PhotosScreen()),
                       );
                     },
-
                     child: Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
